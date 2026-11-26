@@ -1,4 +1,5 @@
 #!/bin/sh
+# SPDX-License-Identifier: GPL-2.0
 # Load aod_dbpump.ko on the AOD311NK with addresses taken from the running kernel.
 #   usage: sh load_dbpump.sh /path/to/aod_dbpump.ko [period_us]
 # The module stays inert (enable=0) until: echo Y > /sys/module/aod_dbpump/parameters/enable

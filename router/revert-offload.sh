@@ -1,4 +1,5 @@
 #!/bin/sh
+# SPDX-License-Identifier: GPL-2.0
 # Return the AOD311NK to its stock LAN state. Idempotent; safe from any state:
 #   pump off + unloaded, switch regs stock (0x7AA=0x14, 0x2E=0x4880), isolation off,
 #   eth0 back in br_gre, eth0.1999 in bridge0.

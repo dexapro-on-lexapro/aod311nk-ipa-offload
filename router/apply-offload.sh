@@ -1,4 +1,5 @@
 #!/bin/sh
+# SPDX-License-Identifier: GPL-2.0
 # Apply (idempotently) the full offload configuration on the AOD311NK:
 #   1. aod_dbpump.ko loaded (inert)        4. RTL8367C port 1: accept-any (0x7AA=0x10) + egress KEEP (0x2E=0x4890)
 #   2. eth0 joined to bridge0               5. pump enabled

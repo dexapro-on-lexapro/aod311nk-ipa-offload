@@ -1,4 +1,5 @@
 #!/bin/sh
+# SPDX-License-Identifier: GPL-2.0
 # Re-emit __this_module with the AOD311NK kernel's real struct module layout,
 # then relink the .ko. Run inside the build container after `make M=... modules`.
 #   usage: fix_this_module.sh <kmod-dir> <module-name>

@@ -1,4 +1,5 @@
 #!/bin/sh
+# SPDX-License-Identifier: GPL-2.0
 # AOD311NK offload orchestrator. Started once per boot by ONE guarded line in /systemrw/pwn.sh:
 #   [ -f /systemrw/offload/ENABLED ] && timeout 10 systemd-run --no-block --unit=offload-boot /bin/sh /systemrw/offload/offload-boot.sh >/dev/null 2>&1
 # Runs as its own systemd unit (outside ipacm.service's cgroup).

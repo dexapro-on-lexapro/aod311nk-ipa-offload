@@ -1,4 +1,5 @@
 #!/bin/sh
+# SPDX-License-Identifier: GPL-2.0
 # Start an extra sshd on :2227 in its OWN systemd unit (offload-sshd.service),
 # outside ipacm.service's cgroup. The normal sshd on :22/:2226 is spawned by
 # pwn.sh inside ipacm.service, so if ipacm ever stops or crashes, systemd kills

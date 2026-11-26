@@ -58,3 +58,8 @@ IPACM only offloads a client that connects to the untagged port after a bounce.
 ## Result
 
 Median of 15 Ookla runs: **494 Mbit/s down**, 65 Mbit/s up, 0% loss.
+
+## License
+
+[GPL-2.0](LICENSE). The kernel module (`kmod/aod_dbpump.c`) is GPL-2.0, as required for an in-kernel module, and the scripts are under the same license.
+Provided as is, with no warranty. Use it on your own device at your own risk. Changing the router may void its warranty or break your service terms.

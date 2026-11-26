@@ -1,4 +1,5 @@
 #!/bin/sh
+# SPDX-License-Identifier: GPL-2.0
 # Switch this Mac's wired link to the AOD311NK between:
 #   untagged : (tagged -> router bounce.sh -> untagged) offload path. en5 ("USB 10/100/1000 LAN") static 192.168.0.182/24 (the router firewall allows SSH only from .182), VLAN off,
 #              USB LAN moved to the top of the service order (internet via the router, not Wi-Fi).

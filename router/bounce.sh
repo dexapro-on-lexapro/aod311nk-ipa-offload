@@ -1,4 +1,5 @@
 #!/bin/sh
+# SPDX-License-Identifier: GPL-2.0
 # Revert + re-apply the offload config (used by the Mac's router-mode.sh while the Mac is on the TAGGED path).
 # After a boot, IPACM only offloads a client that arrives on the untagged port AFTER such a cycle.
 D=/systemrw/offload
