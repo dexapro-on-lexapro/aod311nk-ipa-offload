@@ -26,32 +26,23 @@ LAN download speed goes from about 40 Mbit/s, with the CPU stuck at 100% softirq
 | `router/load_dbpump.sh`, `aod_dbpump.ko` | Load the doorbell module, taking its addresses from `/proc/kallsyms`. |
 | `router/start-rescue-sshd.sh` | Spare sshd on :2227 in its own systemd unit. |
 | `kmod/` | Module source. Build against vanilla 5.4.265, then run `fix_this_module.sh` (the device's `struct module` is 0x240 bytes). |
-| `mac/router-mode.sh` | Moves the Mac between `tagged` and `untagged` and triggers the bounce. |
+| `mac/router-mode.sh` | Moves the Mac/PC between `tagged` and `untagged` and triggers the bounce. |
 
 ## Install (on the router)
 
 ```sh
 mkdir -p /systemrw/offload && cp router/* /systemrw/offload/
 touch /systemrw/offload/ENABLED
-# add to /systemrw/pwn.sh:
 [ -f /systemrw/offload/ENABLED ] && timeout 10 systemd-run --no-block --unit=offload-boot /bin/sh /systemrw/offload/offload-boot.sh >/dev/null 2>&1
 ```
 
 To turn it off: `rm /systemrw/offload/ENABLED` (it reverts within about 20 s).
 
-## Daily use (on the Mac)
-
-After every router reboot, run:
-
-```sh
-osascript -e 'do shell script "/bin/sh mac/router-mode.sh untagged" with administrator privileges'
-```
-
 IPACM only offloads a client that connects to the untagged port after a bounce.
 
 ## Cautions
 
-- The router only accepts SSH from `192.168.0.182`. Keep the Mac on that address.
+- The router only accepts SSH from `192.168.0.182`. Keep the Mac/PC on that address.(Artifact of my own device. Change scripts accordingly to reflect your own IP address)
 - Never restart `ipacm.service`, because sshd on :22 runs inside its cgroup. Use :2227 for risky changes.
 - Upload still goes through the CPU, and loaded latency is about 330 ms (bufferbloat).
 
