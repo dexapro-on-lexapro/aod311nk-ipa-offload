@@ -28,7 +28,7 @@ LAN download speed goes from about 40 Mbit/s, with the CPU stuck at 100% softirq
 | `kmod/` | Module source. Build against vanilla 5.4.265, then run `fix_this_module.sh` (the device's `struct module` is 0x240 bytes). |
 | `mac/router-mode.sh` | Moves the Mac/PC between `tagged` and `untagged` and triggers the bounce. |
 
-## Install (on the router)
+## Install (on the 5G CPE)
 
 ```sh
 mkdir -p /systemrw/offload && cp router/* /systemrw/offload/
